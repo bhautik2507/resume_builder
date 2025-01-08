@@ -155,13 +155,13 @@ const CreateResume = () => {
             <div style={{ lineHeight: "1.8", fontSize: "16px" }}>
               {[
                 { label: "Name", value: `${previewData.firstName || ""} ${previewData.lastName || ""}` },
-                { label: "Email", value: previewData.email || "N/A" },
-                { label: "Address", value: previewData.address || "N/A" },
-                { label: "Mobile", value: previewData.mobileNumber || "N/A" },
-                { label: "Experiences", value: previewData.experiences || "N/A" },
-                { label: "Projects", value: previewData.projects || "N/A" },
-                { label: "Hobbies", value: previewData.hobbies || "N/A" },
-                { label: "Social Media", value: previewData.socialMedia || "N/A" },
+                { label: "Email", value: previewData?.email},
+                { label: "Address", value: previewData?.address},
+                { label: "Mobile", value: previewData?.mobileNumber},
+                { label: "Experiences", value: previewData?.experiences},
+                { label: "Projects", value: previewData?.projects},
+                { label: "Hobbies", value: previewData?.hobbies},
+                { label: "Social Media", value: previewData?.socialMedia},
               ].map((item, index) => (
                 <div key={index} style={{ marginBottom: "15px" }}>
                   <Text strong style={{ fontSize: "16px", color: "#34495e" }}>
