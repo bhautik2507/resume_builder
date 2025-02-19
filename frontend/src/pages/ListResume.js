@@ -19,6 +19,7 @@ const ListResume = () => {
       try {
         const response = await axios.get(`/users/getResume`);
         setResumeData(response.data);
+        console.log("BLACK 🖤💙 ===========>>>>>>>>> ~ file: ListResume.js:22 ~ fetchResumes ~ response:", response)
       } catch (error) {
         console.error("Error fetching resumes:", error);
       } finally {

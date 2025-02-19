@@ -11,10 +11,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} />
         <Route path="/createResume" element={<CreateResume />} />
         <Route path="/listResume" element={<ListResume />} />
-        <Route path="/view-pdf/:id" element={<PdfViewer />} />
+        <Route path="/view-pdf/:id" element={<PdfViewer />} /> */}
       </Routes>
     </Router>
   );

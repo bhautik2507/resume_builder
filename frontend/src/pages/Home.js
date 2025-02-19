@@ -1,12 +1,15 @@
 import React from "react";
-import { Button, Layout, Typography, Row, Col, Space, Card } from "antd";
+// import { Button, Layout, Typography, Row, Col, Space, Card } from "antd";
 import { useNavigate } from "react-router-dom";
-import {
-  LogoutOutlined,
-  FileAddOutlined,
-  FileSearchOutlined,
-  SmileOutlined,
-} from "@ant-design/icons";
+// import Image from "next/image";
+import { Button, Input, Typography, Layout } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+
+
+// import Image from "next/image"
+// import { Button } from "@/components/ui/button"
+// import { Input } from "@/components/ui/input"
+// import { Search } from "lucide-react"
 
 const { Title, Text } = Typography;
 const { Header, Content, Footer } = Layout;
@@ -27,89 +30,119 @@ const Home = () => {
   };
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <div className="min-h-screen">
       {/* Header */}
-      <Header
-        style={{
-          backgroundColor: "black",
-          padding: "0 20px",
-          position: "relative",
-        }}
-      >
-        <Title style={{ color: "white", textAlign: "center", margin: 15 }} level={3}>
-          Resume Builder App
-        </Title>
-        <Button
-          type="primary"
-          icon={<LogoutOutlined />}
-          onClick={handleLogout}
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "20px",
-            fontSize: "16px",
-          }}
-        >
-          Logout
-        </Button>
-      </Header>
+      <header className="bg-[#FF6F00] text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span>🌍</span>
+              <span>+1 877 260 3952</span>
+            </div>
+            <div className="relative">
+              <Input
+                prefix={<SearchOutlined className="text-gray-400" />}
+                placeholder="Search site..."
+                className="h-8 w-[200px] text-black"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
 
-      {/* Content */}
-      <Content style={{ padding: "50px", display: "flex", justifyContent: "center" }}>
-        <Row justify="center" style={{ width: "100%" }}>
-          <Col xs={24} sm={20} md={16} lg={12}>
-            <Card
-              style={{
-                padding: "20px",
-                backgroundColor: "#fafafa",
-                borderRadius: "8px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <Space direction="vertical" style={{ width: "100%" }} size="large">
-                <Title level={2} style={{ textAlign: "center", color: "#096dd9" }}>
-                  Welcome to the Resume Builder App! <SmileOutlined />
-                </Title>
-                <Text type="secondary" style={{ textAlign: "center", fontSize: "16px" }}>
-                  Create professional resumes quickly and easily. Start by creating a new resume
-                  or browse through the existing ones in your collection.
-                </Text>
-                <Row gutter={[16, 16]} justify="center" style={{ marginTop: "30px" }}>
-                  <Col xs={24} sm={12}>
-                    <Button
-                      type="primary"
-                      icon={<FileAddOutlined />}
-                      onClick={handleCreateResume}
-                      block
-                      size="large"
-                      style={{ fontSize: "16px" }}
-                    >
-                      Create Resume
-                    </Button>
-                  </Col>
-                  <Col xs={24} sm={12}>
-                    <Button
-                      type="default"
-                      icon={<FileSearchOutlined />}
-                      onClick={handleListResume}
-                      block
-                      size="large"
-                      style={{ fontSize: "16px" }}
-                    >
-                      List of Resumes
-                    </Button>
-                  </Col>
-                </Row>
-              </Space>
-            </Card>
-          </Col>
-        </Row>
-      </Content>
+      {/* Navigation */}
+      <nav className="border-b py-4">
+        <div className="container mx-auto flex items-center justify-between px-4">
+          <image
+            src="https://sjc.microlink.io/v7fo38cwegtcD_0-QQoDi_UDksZe9cxIwgzfbYykryKpJHdhjfCg1bmZMSJRY3FY0zctVBbVTZ4aZeCACPkJTQ.jpeg"
+            alt="BulkSMS Logo"
+            width={180}
+            height={50}
+            className="h-auto w-auto"
+          />
+          <div className="hidden items-center gap-8 md:flex">
+            {[
+              "Solutions",
+              "Developers",
+              "Pricing",
+              "Resources",
+              "Company",
+              "Contact Us",
+            ].map((item) => (
+              <Button type="link" className="text-gray-600 hover:text-[#FF6F00]" key={item}>
+                {item}
+              </Button>
+            ))}
+            <Button type="text">Login</Button>
+            <Button type="primary" className="bg-[#0088FF] hover:bg-[#0066CC]">
+              Sign Up Today
+            </Button>
+          </div>
+        </div>
+      </nav>
 
-      <Footer style={{ textAlign: "center", backgroundColor: "#f0f2f5", padding: "20px" }}>
-        <Typography.Text type="secondary">Resume Builder App ©2025</Typography.Text>
-      </Footer>
-    </Layout>
+      {/* Hero Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto grid gap-8 px-4 md:grid-cols-2 md:items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">
+              Get Your
+              <br />
+              Message Across
+            </h1>
+            <p className="text-xl text-gray-600">
+              A leading provider of business messaging solutions.
+            </p>
+            <Button type="primary" className="bg-[#0088FF] hover:bg-[#0066CC]">
+              Register your account today
+            </Button>
+          </div>
+          <div className="relative h-[300px] md:h-[400px]">
+            <image
+              src="/placeholder.svg?height=400&width=600"
+              alt="People using mobile phones"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-12 text-center">
+            <span className="block text-3xl font-bold text-gray-800">One Account,</span>
+            <span className="block text-2xl font-bold text-[#FF6F00]">Many Ways to Send</span>
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {[
+              {
+                title: "Send SMS from Web",
+                description: "Use our responsive web app to access your online messaging account",
+              },
+              {
+                title: "Use our SMS API",
+                description: "Send SMSes automatically from your application of choice",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="rounded-lg bg-[#0088FF] p-8 text-white">
+                <div className="mb-6 h-48 relative">
+                  <image
+                    src="/placeholder.svg?height=200&width=300"
+                    alt="Feature Illustration"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="mb-4 text-2xl font-bold">{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
